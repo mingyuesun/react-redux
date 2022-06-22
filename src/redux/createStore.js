@@ -1,4 +1,4 @@
-function createStore(reduce, preloadedState) {
+function createStore(reducer, preloadedState) {
 	let state = preloadedState
 	let listeners = []
 	function getState(){
@@ -11,7 +11,7 @@ function createStore(reduce, preloadedState) {
 		}
 	}
 	function dispatch(action) {
-		state = reduce(state, action)
+		state = reducer(state, action)
 		listeners.forEach(listener => listener())
 		return action
 	}
