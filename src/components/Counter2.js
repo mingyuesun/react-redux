@@ -13,4 +13,5 @@ function Counter2() {
 		</div>
 	)
 }
+
 export default Counter2
