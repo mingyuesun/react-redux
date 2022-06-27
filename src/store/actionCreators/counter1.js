@@ -5,9 +5,17 @@ function add() {
 function minus() {
 	return { type: MINUS1, namespace: "counter1" }
 }
+function thunkAdd() {
+	return function(dispatch) {
+		setTimeout(() => {
+			dispatch({type: ADD1})
+		}, 1000)
+	}
+}
 const actionCreators = {
 	add,
-	minus
+	minus,
+	thunkAdd
 }
 
 export default actionCreators
