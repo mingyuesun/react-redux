@@ -12,10 +12,18 @@ function thunkAdd() {
 		}, 1000)
 	}
 }
+function promiseAdd() {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve({type: ADD1})
+		}, 1000)
+	}) 
+}
 const actionCreators = {
 	add,
 	minus,
-	thunkAdd
+	thunkAdd,
+	promiseAdd
 }
 
 export default actionCreators

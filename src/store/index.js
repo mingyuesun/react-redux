@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware } from "../redux"
 import rootReducer from './reducers'
-// import logger from './logger'
-import thunk from './thunk'
+import { logger, thunk, promise } from './middlewares'
 
 // const store = applyMiddleware(logger)(createStore)(rootReducer)
-const store = applyMiddleware(thunk)(createStore)(rootReducer)
+// const store = applyMiddleware(thunk)(createStore)(rootReducer)
+const store = applyMiddleware(promise)(createStore)(rootReducer)
 
 export default store
 /**
