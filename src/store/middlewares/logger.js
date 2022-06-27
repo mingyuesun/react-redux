@@ -10,6 +10,7 @@ function logger({dispatch, getState}) {
 			console.log('prev', getState())
 			next(action)
 			console.log('next', getState())
+			return action
 		}
 	}
 }
