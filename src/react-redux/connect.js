@@ -24,6 +24,7 @@ function connect(mapStateToProps, mapDispatchToProps) {
 			const [, forceUpdate] = useReducer(x => x + 1, 0)
 			useLayoutEffect(() => {
 				return subscribe(forceUpdate)
+				// eslint-disable-next-line
 			}, [])
 			return <OldComponent  {...stateProps} {...dispatchProps} {...props} />
 		}

@@ -3,7 +3,7 @@ function promise({ dispatch, getState }) {
 		// 此处 action 是 Promise
 		return function(action) {
 			if (action && typeof action.then === "function") {
-				return action.then(newAction => dispatch(newAction))
+				return action.then(dispatch)
 			}
 			return next(action)
 		}

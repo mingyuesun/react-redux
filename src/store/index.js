@@ -4,7 +4,7 @@ import { logger, thunk, promise } from './middlewares'
 
 // const store = applyMiddleware(logger)(createStore)(rootReducer)
 // const store = applyMiddleware(thunk)(createStore)(rootReducer)
-const store = applyMiddleware(promise)(createStore)(rootReducer)
+const store = applyMiddleware(promise, thunk, logger)(createStore)(rootReducer)
 
 export default store
 /**

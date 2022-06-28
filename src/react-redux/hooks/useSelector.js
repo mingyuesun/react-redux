@@ -9,6 +9,7 @@ function useSelector(selector) {
 	const [, forceUpdate] = useReducer(x => x + 1, 0)
 	useLayoutEffect(() => {
 		return subscribe(forceUpdate)
+		// eslint-disable-next-line
 	}, [])
 	return selectedState
 }
