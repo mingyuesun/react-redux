@@ -2,8 +2,8 @@ import compose from './compose'
 
 function applyMiddleware(...middlewares) {
 	return function(createStore) {
-		return function(reducer) {
-			const store = createStore(reducer)
+		return function(reducer, preloadState) {
+			const store = createStore(reducer, preloadState)
 			let dispatch
 			const middlewareAPI = {
 				getState: store.getState,

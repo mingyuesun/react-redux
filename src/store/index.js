@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware } from "../redux"
 import rootReducer from './reducers'
-import { logger, thunk, promise } from './middlewares'
+import { logger, thunk, promise, persist } from './middlewares'
 
-const store = applyMiddleware( promise, thunk, logger)(createStore)(rootReducer)
+const preloadState = JSON.parse(localStorage.getItem("counter"))
+const store = applyMiddleware( promise, thunk, persist, logger)(createStore)(rootReducer, preloadState)
 
 export default store
 /**
